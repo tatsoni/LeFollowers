@@ -1,0 +1,91 @@
+﻿<Ui xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.blizzard.com/wow/ui/">
+	<Script file="Frame.lua" />
+	<Frame name="Frame1" parent="UIParent" toplevel="true" movable="true" enableMouse="true">
+		<Size>
+			<AbsDimension x="382" y="605" />
+		</Size>
+		<Anchors>
+			<Anchor point="CENTER">
+				<Offset x="-302" y="30" />
+			</Anchor>
+		</Anchors>
+		<Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+			<BackgroundInsets>
+				<AbsInset left="11" right="12" top="12" bottom="11" />
+			</BackgroundInsets>
+			<TileSize>
+				<AbsValue val="32" />
+			</TileSize>
+			<EdgeSize>
+				<AbsValue val="32" />
+			</EdgeSize>
+		</Backdrop>
+		<Frames>
+			<Button name="Button1" inherits="UIPanelButtonTemplate" text="X">
+				<Size>
+					<AbsDimension x="22" y="23" />
+				</Size>
+				<Anchors>
+					<Anchor point="TOPLEFT">
+						<Offset x="357" y="-4" />
+					</Anchor>
+				</Anchors>
+				<Scripts>
+					<OnClick>Frame1:Hide()</OnClick>
+				</Scripts>
+			</Button>
+		</Frames>
+		<Layers>
+			<Layer level="OVERLAY">
+				<FontString name="FontString1" inherits="GameFontNormalLarge" text="FontString1" justifyV="TOP" justifyH="LEFT">
+					<Size>
+						<AbsDimension x="175" y="104" />
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT">
+							<Offset x="12" y="-33" />
+						</Anchor>
+					</Anchors>
+					<FontHeight>
+						<AbsValue val="20" />
+					</FontHeight>
+				</FontString>
+				<FontString name="FontString2" inherits="GameFontNormalLarge" text="FontString2" justifyV="TOP" justifyH="LEFT">
+					<Size>
+						<AbsDimension x="185" y="104" />
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT">
+							<Offset x="193" y="-33" />
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="FontString3" inherits="GameFontNormalLarge" text="FontString3" justifyV="TOP" justifyH="LEFT">
+					<Size>
+						<AbsDimension x="365" y="461" />
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT">
+							<Offset x="12" y="-143" />
+						</Anchor>
+					</Anchors>
+				</FontString>
+				<FontString name="FontString4" inherits="GameFontNormalLarge" text="Totals (Active)">
+					<Size>
+						<AbsDimension x="171" y="19" />
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT">
+							<Offset x="101" y="-7" />
+						</Anchor>
+					</Anchors>
+				</FontString>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnLoad>FollowerFrame_OnLoad(self)</OnLoad>
+			<OnMouseUp>self:StopMovingOrSizing()</OnMouseUp>
+			<OnMouseDown>self:StartMoving()</OnMouseDown>
+		</Scripts>
+	</Frame>
+</Ui>
