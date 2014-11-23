@@ -4,9 +4,38 @@ function SlashCmdList.LEFOLLOWERS(msg, editbox) -- 4.
 	Frame1:Show();
 end
 
+function sortNameFunction(a, b)
+	-- treat IN_PARTY status as no status
+	local status1 = a.status;
+	--local status1 = 0;
+	--if ( status1 == GARRISON_FOLLOWER_IN_PARTY ) then
+	if ( status1 ~= GARRISON_FOLLOWER_INACTIVE ) then
+		status1 = nil;
+	end
+	local status2 = b.status;
+	--if ( status2 == GARRISON_FOLLOWER_IN_PARTY ) then
+	if ( status2 ~= GARRISON_FOLLOWER_INACTIVE ) then
+		status2 = nil;
+	end		
+
+	if ( status1 and not status2 ) then
+		return false;
+	elseif ( not status1 and status2 ) then
+		return true;
+	end
+
+	if ( status1 ~= status2 ) then
+		return status1 < status2;
+	end
+	
+	return a.name < b.name
+	--return a.status < b.status
+end
+
 function FList()
  FollowerString = "";
  followersList = C_Garrison.GetFollowers();
+ table.sort(followersList, sortNameFunction);
  followerCount = 0;
  timedIcon = "Interface\\ICONS\\SPELL_HOLY_BORROWEDTIME.BLP";
  timedText = "Timed Battle";
@@ -44,6 +73,13 @@ function FList()
 		if(followersList[i].isCollected) then
 			followerCount = followerCount + 1
 			counters = ""
+			level = ""
+			
+			if ( followersList[i].level == GARRISON_FOLLOWER_MAX_LEVEL) then
+				level = " (" .. followersList[i].iLevel .. ")"
+			else
+				level = " (" .. followersList[i].level .. ")"
+			end
 			followerAbilities = C_Garrison.GetFollowerAbilities(followersList[i].followerID);
 			for a = 1, #followerAbilities do
 				ability = followerAbilities[a];
@@ -97,9 +133,9 @@ function FList()
 				end
 			end
 			if ( followersList[i].status == GARRISON_FOLLOWER_INACTIVE ) then
-				FollowerString = string.format("%s%s|t:%s|n", FollowerString, ("|cff6E6E6E(" .. followersList[i].name .. ")|r"), counters);	
+				FollowerString = string.format("%s%s|t:%s|n", FollowerString, ("|cff6E6E6E" .. followersList[i].name .. level .. "|r"), counters);	
 			else
-				FollowerString = string.format("%s%s|t:%s|n", FollowerString, followersList[i].name, counters);	
+				FollowerString = string.format("%s%s|t:%s|n", FollowerString, ITEM_QUALITY_COLORS[followersList[i].quality].hex..followersList[i].name..level..FONT_COLOR_CODE_CLOSE, counters);	
 			end
 			abilities = C_Garrison.GetFollowerAbilities(followersList[i].followerID);
 		end
@@ -116,11 +152,11 @@ function FList()
 	totals2 = string.format("%s \124T%s:0:0:2:0\124t %s:%s |n", totals2, timedIcon, timedText, timedcount ); 	
 	totals2 = string.format("%s \124T%s:0:0:2:0\124t %s:%s ", totals2, wildIcon, wildText, wildcount ); 
 
-	FontString3:SetText(FollowerString);
-	FontString1:SetText(totals1);
-	FontString2:SetText(totals2);
+	FontStringLeFol3:SetText(FollowerString);
+	FontStringLeFol1:SetText(totals1);
+	FontStringLeFol2:SetText(totals2);
 	-- resize the frames
-	FontString3:SetHeight((followerCount) * 16)
+	FontStringLeFol3:SetHeight((followerCount) * 16)
 	Frame1:SetHeight((followerCount) * 16 + 165)
 	
 end

@@ -37,7 +37,7 @@
 		</Frames>
 		<Layers>
 			<Layer level="OVERLAY">
-				<FontString name="FontString1" inherits="GameFontNormalLarge" text="FontString1" justifyV="TOP" justifyH="LEFT">
+				<FontString name="FontStringLeFol1" inherits="GameFontNormalLarge" text="FontStringLeFol1" justifyV="TOP" justifyH="LEFT">
 					<Size>
 						<AbsDimension x="175" y="104" />
 					</Size>
@@ -50,7 +50,7 @@
 						<AbsValue val="20" />
 					</FontHeight>
 				</FontString>
-				<FontString name="FontString2" inherits="GameFontNormalLarge" text="FontString2" justifyV="TOP" justifyH="LEFT">
+				<FontString name="FontStringLeFol2" inherits="GameFontNormalLarge" text="FontStringLeFol2" justifyV="TOP" justifyH="LEFT">
 					<Size>
 						<AbsDimension x="185" y="104" />
 					</Size>
@@ -60,7 +60,7 @@
 						</Anchor>
 					</Anchors>
 				</FontString>
-				<FontString name="FontString3" inherits="GameFontNormalLarge" text="FontString3" justifyV="TOP" justifyH="LEFT">
+				<FontString name="FontStringLeFol3" inherits="GameFontNormalLarge" text="FontStringLeFol3" justifyV="TOP" justifyH="LEFT">
 					<Size>
 						<AbsDimension x="365" y="461" />
 					</Size>
@@ -70,7 +70,7 @@
 						</Anchor>
 					</Anchors>
 				</FontString>
-				<FontString name="FontString4" inherits="GameFontNormalLarge" text="Totals (Active)">
+				<FontString name="FontStringLeFol4" inherits="GameFontNormalLarge" text="Totals (Active)">
 					<Size>
 						<AbsDimension x="171" y="19" />
 					</Size>
