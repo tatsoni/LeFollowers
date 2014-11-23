@@ -1,5 +1,5 @@
 ## Author: Tatu
 ## Interface: 60000
 ## Title: LeFollowers
-## Version: 1.0.1
+## Version: 1.1
 Frame.xml
