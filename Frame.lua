@@ -87,44 +87,44 @@ function FList()
 					for id, counter in pairs(ability.counters) do
 						counters = string.format("%s \124T%s:0:0:2:0\124t", counters, counter.icon);
 						if ( followersList[i].status ~= GARRISON_FOLLOWER_INACTIVE ) then
-							if ( counter.name == "Wild Aggression" ) then -- check if counter is for Wild Aggression
+							if ( id == 1 ) then -- check if counter is for Wild Aggression
 								wildcount = wildcount + 1; -- adding 1 to total
 								--wildIcon = counter.icon;
 							end
 
-							if ( counter.name == "Massive Strike" ) then -- check if counter is for Massive Strike
+							if ( id == 2 ) then -- check if counter is for Massive Strike
 								massivecount = massivecount + 1; -- adding 1 to total
 								--massiveIcon = counter.icon;
 							end
 						
-							if ( counter.name == "Group Damage" ) then -- check if counter is for Group Damage
+							if ( id == 3 ) then -- check if counter is for Group Damage
 								groupcount = groupcount + 1; -- adding 1 to total
 								--groupIcon = counter.icon;
 							end
 
-							if ( counter.name == "Magic Debuff" ) then -- check if counter is for Magic Debuff
+							if ( id == 4 ) then -- check if counter is for Magic Debuff
 								magiccount = magiccount + 1; -- adding 1 to total
 								--magicIcon = counter.icon;
 							end
 						
-							if ( counter.name == "Timed Battle" ) then -- check if counter is for Timed Battle
+							if ( id == 10 ) then -- check if counter is for Timed Battle
 								timedcount = timedcount + 1; -- adding 1 to total
 								--timedIcon = counter.icon;
 							end
 
-							if ( counter.name == "Deadly Minions" ) then -- check if counter is for Deadly Minions
+							if ( id == 9 ) then -- check if counter is for Deadly Minions
 								deadlycount = deadlycount + 1; -- adding 1 to total
 								--deadlyIcon = counter.icon;
 							end
-							if ( counter.name == "Powerful Spell" ) then -- check if counter is for Powerful Spell
+							if ( id == 8 ) then -- check if counter is for Powerful Spell
 								powerfullcount = powerfullcount + 1; -- adding 1 to total
 								--powerfullIcon = counter.icon;
 							end
-							if ( counter.name == "Minion Swarms" ) then -- check if counter is for Minion Swarms
+							if ( id == 7 ) then -- check if counter is for Minion Swarms
 								minioncount = minioncount + 1; -- adding 1 to total
 								--minionIcon = counter.icon;
 							end
-							if ( counter.name == "Danger Zones" ) then -- check if counter is for Danger Zones
+							if ( id == 6 ) then -- check if counter is for Danger Zones
 								dangercount = dangercount + 1; -- adding 1 to total
 								--dangerIcon = counter.icon;
 							end
