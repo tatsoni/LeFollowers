@@ -128,7 +128,6 @@ function FList()
 							if ( id == 6 ) then -- check if counter is for Danger Zones
 								dangercount = dangercount + 1; -- adding 1 to total
 								--dangerIcon = counter.icon;
-								--print(counter.icon)
 							end
 						end
 					end
@@ -136,10 +135,7 @@ function FList()
 					if ( ability.id == 232 ) then -- check if trais is Dancer => Danger Zone
 						dangercount = dangercount + 1; -- adding 1 to total
 						counters = string.format("%s \124T%s:0:0:2:0\124t", counters, 'Interface\\ICONS\\spell_Shaman_Earthquake.blp');
-						print("TESTI"..ability.id..ability.name..ability.icon)
-						--dangerIcon = counter.icon;
 					end
-				--print("TESTI"..ability.id..ability.name)
 				end
 			end
 			if ( followersList[i].status == GARRISON_FOLLOWER_INACTIVE ) then
