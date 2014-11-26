@@ -75,7 +75,7 @@ function FList()
 			counters = ""
 			level = ""
 			
-			if ( followersList[i].level == GARRISON_FOLLOWER_MAX_LEVEL) then
+			if ( followersList[i].level == 100) then
 				level = " (" .. followersList[i].iLevel .. ")"
 			else
 				level = " (" .. followersList[i].level .. ")"
@@ -86,6 +86,7 @@ function FList()
 				if ( not ability.isTrait ) then
 					for id, counter in pairs(ability.counters) do
 						counters = string.format("%s \124T%s:0:0:2:0\124t", counters, counter.icon);
+						--print(counter.description)
 						if ( followersList[i].status ~= GARRISON_FOLLOWER_INACTIVE ) then
 							if ( id == 1 ) then -- check if counter is for Wild Aggression
 								wildcount = wildcount + 1; -- adding 1 to total
@@ -127,9 +128,18 @@ function FList()
 							if ( id == 6 ) then -- check if counter is for Danger Zones
 								dangercount = dangercount + 1; -- adding 1 to total
 								--dangerIcon = counter.icon;
+								--print(counter.icon)
 							end
 						end
 					end
+				else
+					if ( ability.id == 232 ) then -- check if trais is Dancer => Danger Zone
+						dangercount = dangercount + 1; -- adding 1 to total
+						counters = string.format("%s \124T%s:0:0:2:0\124t", counters, 'Interface\\ICONS\\spell_Shaman_Earthquake.blp');
+						print("TESTI"..ability.id..ability.name..ability.icon)
+						--dangerIcon = counter.icon;
+					end
+				--print("TESTI"..ability.id..ability.name)
 				end
 			end
 			if ( followersList[i].status == GARRISON_FOLLOWER_INACTIVE ) then
