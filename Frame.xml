@@ -37,7 +37,7 @@
 		</Frames>
 		<Layers>
 			<Layer level="OVERLAY">
-				<FontString name="FontStringLeFol1" inherits="GameFontNormalLarge" text="FontStringLeFol1" justifyV="TOP" justifyH="LEFT">
+				<FontString name="FontStringLeFol1" inherits="GameFontNormal" text="FontStringLeFol1" justifyV="TOP" justifyH="LEFT">
 					<Size>
 						<AbsDimension x="175" y="104" />
 					</Size>
@@ -50,7 +50,7 @@
 						<AbsValue val="20" />
 					</FontHeight>
 				</FontString>
-				<FontString name="FontStringLeFol2" inherits="GameFontNormalLarge" text="FontStringLeFol2" justifyV="TOP" justifyH="LEFT">
+				<FontString name="FontStringLeFol2" inherits="GameFontNormal" text="FontStringLeFol2" justifyV="TOP" justifyH="LEFT">
 					<Size>
 						<AbsDimension x="185" y="104" />
 					</Size>
